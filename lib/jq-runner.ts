@@ -1,5 +1,5 @@
 let initialized = false;
-let jq: (input: any, expr: string) => Promise<any> | null = null;
+let jq: ((input: any, expr: string) => Promise<any>) | null = null;
 
 export async function runJq(expr: string, input: string = '{}'): Promise<string> {
     if (!initialized) {
