@@ -103,9 +103,9 @@ export default function GameLayout() {
     return (
         <div className="min-h-screen flex items-center justify-center">
             <div className="relative z-10 max-w-6xl w-full mx-auto p-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 h-[850px]">
                     {/* 왼쪽: 교관 + 말풍선 (2칸 높이) */}
-                    <section className="bg-white/60 backdrop-blur-md p-6 rounded-xl shadow-lg md:row-span-2 h-[800px] overflow-y-auto">
+                    <section className="bg-white/60 backdrop-blur-md p-6 rounded-xl shadow-lg md:row-span-2 h-full">
                         <MagicInstructor
                             mood="neutral"
                             message={current.hints[0]}

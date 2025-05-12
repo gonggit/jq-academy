@@ -52,7 +52,7 @@ export default function MagicInstructor({
     const currentProblems = Array.from({ length: endIndex - startIndex }, (_, i) => startIndex + i);
 
     return (
-        <div className="flex flex-col h-full space-y-6">
+        <div className="flex flex-col h-full py-6">
             <div className="flex flex-col p-4 flex-grow">
                 <div className="flex justify-between items-center mb-4">
                     <div className="text-2xl">🧙‍♀️</div>
@@ -110,7 +110,7 @@ export default function MagicInstructor({
             </div>
 
             {/* 문제 버튼 */}
-            <div id="buttons" className="mt-4 pb-4 flex justify-center">
+            <div id="buttons" className="flex justify-center">
                 <div className="flex flex-wrap gap-2">
                     <button
                         onClick={() => setCurrentPage(p => Math.max(1, p - 1))}

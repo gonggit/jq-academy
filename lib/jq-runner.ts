@@ -1,16 +1,16 @@
 let initialized = false;
-let jq: any = null;
+let jq: (input: any, expr: string) => Promise<any> | null = null;
 
 export async function runJq(expr: string, input: string = '{}'): Promise<string> {
     if (!initialized) {
         try {
-            const module = await import("jq-wasm");
-            jq = module.json;
+            const jqModule = await import("jq-wasm");
+            jq = jqModule.json;
             if (typeof jq !== 'function') {
                 return "jq 초기화에 실패했습니다.";
             }
             initialized = true;
-        } catch (e: any) {
+        } catch (error) {
             return "jq를 초기화하는데 실패했습니다.";
         }
     }
@@ -45,7 +45,7 @@ export async function runJq(expr: string, input: string = '{}'): Promise<string>
 
         // 그 외의 경우 문자열로 변환하고 공백 제거
         return String(result).replace(/\s+/g, '');
-    } catch (e: any) {
+    } catch (error) {
         return "jq 실행 중 오류가 발생했습니다. 입력값과 표현식을 확인해주세요.";
     }
 }
