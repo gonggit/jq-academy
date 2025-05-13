@@ -101,7 +101,7 @@ export default function GameLayout() {
     }
 
     return (
-        <div className="min-h-screen flex items-center justify-center">
+        <div className="min-h-screen flex items-center justify-center max-md:overflow-y-scroll">
             <div className="relative z-10 max-w-6xl w-full mx-auto p-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 h-[850px]">
                     {/* 왼쪽: 교관 + 말풍선 (2칸 높이) */}
@@ -121,7 +121,7 @@ export default function GameLayout() {
                     </section>
 
                     {/* 오른쪽 위: jq 입력창 */}
-                    <section className="bg-white/60 backdrop-blur-md p-6 rounded-xl shadow-lg h-full overflow-y-auto">
+                    <section className="bg-white/60 backdrop-blur-md p-6 rounded-xl shadow-lg h-full lg:overflow-y-auto">
                         <h2 className="text-xl font-semibold mb-2">JQ 입력</h2>
                         <Editor
                             initial={current.template}
@@ -135,7 +135,7 @@ export default function GameLayout() {
                     </section>
 
                     {/* 오른쪽 아래: 출력 + 정답 확인 */}
-                    <section className="bg-white/60 backdrop-blur-md p-6 rounded-xl shadow-lg h-full overflow-y-auto">
+                    <section className="bg-white/60 backdrop-blur-md p-6 rounded-xl shadow-lg h-full lg:overflow-y-auto">
                         <h2 className="text-xl font-semibold mb-2">결과</h2>
                         <Output
                             expected={current.answer}
